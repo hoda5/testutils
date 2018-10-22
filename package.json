@@ -1,6 +1,6 @@
 {
   "name": "@hoda5/testutils",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Jest test utils",
   "main": "dist/testutils.js",
   "types": "dist/testutils.d.ts",

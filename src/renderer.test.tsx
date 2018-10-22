@@ -1,5 +1,5 @@
 import * as React from "react"
-import { renderer } from "./renderer"
+import { renderer } from "./testutils"
 
 describe("renderer", () => {
     it("search string", () => {

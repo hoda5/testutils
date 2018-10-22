@@ -1,5 +1,5 @@
 import "tslib"
-import { callbackWaiter } from "./callbackWaiter"
+import { callbackWaiter } from "./testutils"
 
 describe("callbackWaiter", () => {
     it("waitCallback", async () => {
@@ -7,6 +7,7 @@ describe("callbackWaiter", () => {
         setTimeout(() => cb.callback(5), 50)
         setTimeout(() => cb.callback(1), 10)
         setTimeout(() => cb.callback(3), 30)
+        setTimeout(() => cb.callback(3), 60)
         expect(await cb.waitCallback()).toBe(1)
         expect(await cb.waitCallback()).toBe(3)
         expect(await cb.waitCallback()).toBe(5)

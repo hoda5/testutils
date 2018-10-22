@@ -1,7 +1,7 @@
 var _this = this;
 import * as tslib_1 from "tslib";
 import "tslib";
-import { callbackWaiter } from "./callbackWaiter";
+import { callbackWaiter } from "./testutils";
 describe("callbackWaiter", function () {
     it("waitCallback", function () { return tslib_1.__awaiter(_this, void 0, void 0, function () {
         var cb, _a, _b, _c;
