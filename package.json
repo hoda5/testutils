@@ -1,0 +1,80 @@
+{
+  "name": "@hoda5/testutils",
+  "version": "1.0.1",
+  "description": "Jest test utils",
+  "main": "dist/testutils.js",
+  "types": "dist/testutils.d.ts",
+  "scripts": {
+    "build": "rm -rf dist ; tsc -p .",
+    "watch": "rm -rf dist ; tsc -p . --watch",
+    "lint": "tslint --project .",
+    "lintfix": "tslint --project . --fix",
+    "test": "jest",
+    "prepublish": "npm run build & npm test ",
+    "codecov": "cat coverage/coverage-final.json | npx codecov",
+    "coverage": "sensible-browser coverage/index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hoda5/testutils.git"
+  },
+  "author": "josefernandotolentino@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hoda5/testutils/issues"
+  },
+  "homepage": "https://github.com/hoda5/testutils#readme",
+  "dependencies": {
+    "@types/jest": "^23.3.5",
+    "@types/react": "^16.4.18",
+    "@types/react-test-renderer": "^16.0.3",
+    "jest": "^23.6.0",
+    "react": "^16.5.2",
+    "react-test-renderer": "^16.5.2",
+    "ts-jest": "^23.10.4",
+    "typescript": "^3.1.3"
+  },
+  "jest": {
+    "verbose": true,
+    "globals": {
+      "ts-jest": {
+        "diagnostics": true
+      }
+    },
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "roots": [
+      "src/"
+    ],
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.tsx?$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ],
+    "collectCoverage": true,
+    "coverageReporters": [
+      "json",
+      "lcov",
+      "text",
+      "html"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "lines": 100
+      }
+    },
+    "collectCoverageFrom": [
+      "**/*.{ts,tsx}",
+      "!**/node_modules/**",
+      "!**/vendor/**"
+    ]
+  },
+  "devDependencies": {
+    "tslib": "^1.9.3"
+  }
+}
